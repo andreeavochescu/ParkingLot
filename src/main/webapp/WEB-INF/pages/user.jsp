@@ -1,26 +1,26 @@
 <%-- 
-    Document   : cars
-    Created on : Nov 5, 2020, 8:14:24 PM
+    Document   : user
+    Created on : Nov 18, 2020, 11:04:22 AM
     Author     : Lenovo
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
-<t:pageTemplate pageTitle="Cars">
-    <h1>Cars</h1>
-    <c:forEach var="car" items="${cars}" varStatus="status">
+<t:pageTemplate pageTitle="Users">
+    <h1>Users</h1>
+    <c:forEach var="user" items="${users}" varStatus="status">
     <div class="row">
         <div class="col-md-4">
-            ${car.licensePlate}
+            ${user.username}
         </div>
         <div class="col-md-4">
-            ${car.ParkingSpot}
+            ${user.email}
         </div>
         <div class="col-md-4">
-            ${car.usernamr}
+            ${user.position}
         </div>
     </div>
     </c:forEach>
-   <h5>Free parking spots: ${numberOfFreeParkingSpots}</h5>  
 </t:pageTemplate>
+

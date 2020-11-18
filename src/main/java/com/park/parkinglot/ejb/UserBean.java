@@ -40,6 +40,17 @@ public class UserBean {
             throw new EJBException(ex);
         }
     }
+    
+    public List<UserDetails> getAllUsers(){
+        LOG.info("getAllUsers");
+        try {
+            Query query = em.createQuery("SELECT u FROM User u");
+            List<User> users = (List<User>) query.getResultList();
+            return copyUsersToDetails(users);
+        } catch (Exception ex) {
+            throw new EJBException(ex);
+        }
+    }
 
     private List<UserDetails> copyUsersToDetails(List<User> users) {
         List<UserDetails> detailsList = new ArrayList<>();
