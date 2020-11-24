@@ -19,7 +19,6 @@ import javax.persistence.Table;
  *
  * @author Lenovo
  */
-
 @Entity
 @Table(name = "CARS")
 public class Car implements Serializable {
@@ -28,11 +27,11 @@ public class Car implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-private String licensePlate;
-private String parkingSpot;
-@ManyToOne(fetch = FetchType.LAZY)
-@JoinColumn(name = "USER_KEY")
-private User user;
+    private String licensePlate;
+    private String parkingSpot;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "USER_KEY")
+    private User user;
 
     public String getLicensePlate() {
         return licensePlate;
@@ -57,6 +56,7 @@ private User user;
     public void setUser(User user) {
         this.user = user;
     }
+
     public Integer getId() {
         return id;
     }
@@ -89,5 +89,5 @@ private User user;
     public String toString() {
         return "com.park.parkinglot.entity.Car[ id=" + id + " ]";
     }
-    
+
 }
