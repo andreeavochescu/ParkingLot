@@ -20,11 +20,17 @@
                 <div class="col-md-3">
                     ${car.licensePlate}
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     ${car.parkingSpot}
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     ${car.username}
+                </div>
+                <div class="col-md-1">
+                    <img src="${pageContext.request.contextPath}/Cars/Photos?id=${car.id}" width="48" />
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-secondary" href="${pageContext.request.contextPath}/Cars/AddPhoto?id=${car.id}" role="button">Add photo</a>
                 </div>
                 <div class="col-md-2">
                     <a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditCar?id=${car.id}" role="button">Edit Car</a>
